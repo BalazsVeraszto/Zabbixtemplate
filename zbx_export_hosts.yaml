@@ -1,0 +1,183 @@
+zabbix_export:
+  version: '7.0'
+  host_groups:
+    - uuid: dc579cd7a1a34222933f24f52a68bcd8
+      name: 'Linux servers'
+    - uuid: 6f6799aa69e844b4b3918f779f2abf08
+      name: 'Zabbix servers'
+  hosts:
+    - host: cbr01-cyber
+      name: cbr01-cyber
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.161.20
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-dmz
+      name: cbr01-dmz
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.151.133
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-keycloak
+      name: cbr01-keycloak
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.161.21
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-manager
+      name: cbr01-manager
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.171.55
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-simulated-net-server
+      name: cbr01-simulated-net-server
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 207.51.72.151
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-wazuh
+      name: cbr01-wazuh
+      templates:
+        - name: 'CBR01 - Web'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 207.11.10.120
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-whistleblower
+      name: cbr01-whistleblower
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.161.24
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr01-worker
+      name: cbr01-worker
+      templates:
+        - name: 'CBR01 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.171.52
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-cyber
+      name: cbr02-cyber
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.162.20
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-dmz
+      name: cbr02-dmz
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.152.133
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-keycloak
+      name: cbr02-keycloak
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.162.21
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-manager
+      name: cbr02-manager
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.172.55
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-simulated-net-server
+      name: cbr02-simulated-net-server
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 207.52.72.151
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-wazuh
+      name: cbr02-wazuh
+      templates:
+        - name: 'CBR02 - Web'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 207.12.10.120
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-whistleblower
+      name: cbr02-whistleblower
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.162.24
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: cbr02-worker
+      name: cbr02-worker
+      templates:
+        - name: 'CBR02 - Default'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.172.52
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: 'Zabbix server'
+      name: 'Zabbix server'
+      templates:
+        - name: 'Linux by Zabbix agent'
+        - name: 'Zabbix server health'
+      groups:
+        - name: 'Zabbix servers'
+      interfaces:
+        - interface_ref: if1
+      inventory:
+        name: cbr0x-zabbix
+        os: 'Linux version 5.15.0-94-generic (buildd@lcy02-amd64-096) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ub'
+        location_lat: '56.95387'
+        location_lon: '24.22067'
+      inventory_mode: AUTOMATIC
